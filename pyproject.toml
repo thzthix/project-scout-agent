@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "project-scout-agent"
+version = "0.1.0"
+description = "A small, explainable agent system for scouting and evaluating project repositories."
+requires-python = ">=3.13"
+dependencies = [
+    "langchain>=1.0,<2.0",
+    "pydantic>=2.0,<3.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

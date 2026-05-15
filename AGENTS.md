@@ -4,6 +4,7 @@
 - Prefer small composable functions.
 - Avoid large monolithic functions.
 - Split functions when they start mixing multiple responsibilities.
+- Target Python 3.13 syntax and prefer modern typing such as `int | None` and `list[str]` over legacy typing forms unless compatibility requires otherwise.
 - Do not hardcode secrets, model keys, or absolute file paths.
 - Fail clearly if required config is missing.
 
