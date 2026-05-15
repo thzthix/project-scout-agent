@@ -19,3 +19,8 @@
 - All model outputs used by the workflow must be schema-validated.
 - Tools must return bounded, predictable data rather than large unstructured payloads.
 
+## Git Workflow Rules
+
+- Create branches per feature.
+- Use the branch naming pattern `feat/add-<feature-name-in-english>`.
+- Use commit messages in the format `feat: <기능 설명> 추가`.
