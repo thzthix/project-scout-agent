@@ -7,7 +7,7 @@ from datetime import datetime
 from pathlib import Path
 
 from project_scout_agent.query_builder import build_query_seeds
-from project_scout_agent.schemas.query_seed import QueryPlan
+from project_scout_agent.schemas.query_seed import QueryPlan, QuerySeed
 from project_scout_agent.schemas.request import ProjectScoutRequest
 from project_scout_agent.schemas.search_candidate import SearchCandidate, SearchResultForSeed
 from project_scout_agent.search import search_repositories_for_seed
@@ -16,6 +16,7 @@ from project_scout_agent.search import search_repositories_for_seed
 EVAL_PATH = Path(__file__).with_name("judged_queries.json")
 CACHE_DIR = Path(__file__).with_name("cache")
 QUERY_SUFFIX = " in:name,description"
+EVAL_PER_PAGE = 20
 
 
 def _load_judged_queries() -> list[dict]:
@@ -73,7 +74,7 @@ def _save_cached_seed_result(
 def _search_repositories_with_cache(
     query_plan: QueryPlan,
     sort_by: str | None = None,
-    per_page: int = 10,
+    per_page: int = EVAL_PER_PAGE,
 ) -> list[SearchResultForSeed]:
     search_results: list[SearchResultForSeed] = []
 
@@ -104,6 +105,45 @@ def _apply_query_suffix(query_plan: QueryPlan, query_suffix: str) -> QueryPlan:
                 update={"query": f"{query_seed.query}{query_suffix}"}
             )
             for query_seed in query_plan.query_seeds
+        ]
+    )
+
+
+def _append_identity_query(
+    query_plan: QueryPlan,
+    request: ProjectScoutRequest,
+) -> QueryPlan:
+    quoted_seed_keywords = [
+        f"\"{keyword.strip()}\""
+        for keyword in request.seed_keywords
+        if keyword.strip() and " " in keyword.strip()
+    ]
+    if not quoted_seed_keywords:
+        return query_plan
+
+    identity_tokens = [
+        *quoted_seed_keywords,
+        *[
+            language.strip()
+            for language in request.constraints.preferred_languages
+            if language.strip()
+        ],
+    ]
+    identity_query = " ".join(identity_tokens).strip()
+    if not identity_query:
+        return query_plan
+
+    return QueryPlan(
+        query_seeds=[
+            *query_plan.query_seeds,
+            QuerySeed(
+                query=identity_query,
+                source=query_plan.query_seeds[-1].source,
+                used_fields=[
+                    "seed_keywords",
+                    "constraints.preferred_languages",
+                ],
+            ),
         ]
     )
 
@@ -175,6 +215,16 @@ def _tokenize(text: str) -> set[str]:
     return {token for token in text.lower().split() if token}
 
 
+def _extract_query_phrases(search_results: list) -> list[str]:
+    query_phrases: list[str] = []
+
+    for search_result in search_results:
+        query_text = search_result.query_seed.query.lower()
+        query_phrases.extend(re.findall(r'"([^"]+)"', query_text))
+
+    return query_phrases
+
+
 def _build_query_tokens(search_results: list) -> set[str]:
     query_tokens: set[str] = set()
 
@@ -184,14 +234,22 @@ def _build_query_tokens(search_results: list) -> set[str]:
     return query_tokens
 
 
-def _rerank_candidates(candidates: list, query_tokens: set[str]) -> list:
-    def candidate_score(candidate) -> tuple[int, int, float]:
+def _rerank_candidates(
+    candidates: list,
+    query_tokens: set[str],
+    query_phrases: list[str],
+) -> list:
+    def candidate_score(candidate) -> tuple[int, int, int, float]:
         owner_name = _extract_repo_owner(candidate.repo_url)
         candidate_text = f"{owner_name} {candidate.repo_name} {candidate.description}"
         candidate_tokens = _tokenize(candidate_text)
         token_overlap = len(candidate_tokens & query_tokens)
+        repo_name_lower = candidate.repo_name.lower()
         name_exactness = sum(
-            1 for token in query_tokens if token and token in candidate.repo_name.lower()
+            1 for token in query_tokens if token and token in repo_name_lower
+        )
+        phrase_exactness = sum(
+            1 for phrase in query_phrases if phrase and phrase in repo_name_lower
         )
         updated_at = datetime.fromisoformat(candidate.updated_at.replace("Z", "+00:00"))
         age_in_days = max((datetime.now(updated_at.tzinfo) - updated_at).days, 0)
@@ -199,7 +257,7 @@ def _rerank_candidates(candidates: list, query_tokens: set[str]) -> list:
         fork_score = math.log10(candidate.forks + 1)
         freshness_score = -math.log10(age_in_days + 1)
         authority_score = star_score + fork_score + freshness_score
-        return name_exactness, token_overlap, authority_score
+        return phrase_exactness, name_exactness, token_overlap, authority_score
 
     return sorted(
         candidates,
@@ -269,9 +327,12 @@ def run_judged_eval() -> dict:
 
     for judged_query in judged_queries:
         request = ProjectScoutRequest.model_validate(judged_query["request"])
-        query_plan = _apply_query_suffix(
-            build_query_seeds(request),
-            QUERY_SUFFIX,
+        query_plan = _append_identity_query(
+            _apply_query_suffix(
+                build_query_seeds(request),
+                QUERY_SUFFIX,
+            ),
+            request,
         )
         best_match_results = _search_repositories_with_cache(query_plan)
         updated_sorted_results = _search_repositories_with_cache(query_plan, sort_by="updated")
@@ -285,7 +346,12 @@ def run_judged_eval() -> dict:
             for candidate in pruned_candidates
         ]
         query_tokens = _build_query_tokens(search_results)
-        reranked_candidates = _rerank_candidates(pruned_candidates, query_tokens)
+        query_phrases = _extract_query_phrases(search_results)
+        reranked_candidates = _rerank_candidates(
+            pruned_candidates,
+            query_tokens,
+            query_phrases,
+        )
         reranked_candidate_full_names = [
             _extract_repo_full_name(candidate.repo_url)
             for candidate in reranked_candidates
