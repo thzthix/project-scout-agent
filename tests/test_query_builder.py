@@ -38,28 +38,25 @@ class QueryBuilderTest(unittest.TestCase):
                 return query_seed
         return None
 
-    def test_build_query_seeds_creates_three_queries_when_all_inputs_exist(self) -> None:
+    def test_build_query_seeds_creates_two_queries_when_all_inputs_exist(self) -> None:
         request = build_valid_request()
 
         query_plan = build_query_seeds(request)
 
-        self.assertEqual(len(query_plan.query_seeds), 3)
-        self.assertIsNotNone(
-            self._find_query_by_source(
-                query_plan,
-                RequestSection.TARGET_REPOSITORY_DESCRIPTION,
-            )
+        self.assertEqual(len(query_plan.query_seeds), 2)
+        target_description_query = self._find_query_by_source(
+            query_plan,
+            RequestSection.TARGET_REPOSITORY_DESCRIPTION,
+        )
+        self.assertIsNotNone(target_description_query)
+        self.assertEqual(
+            target_description_query.used_fields,
+            ["target_repository_description"],
         )
         self.assertIsNotNone(
             self._find_query_by_source(
                 query_plan,
                 RequestSection.SEED_KEYWORDS,
-            )
-        )
-        self.assertIsNotNone(
-            self._find_query_by_source(
-                query_plan,
-                RequestSection.CONSTRAINTS,
             )
         )
 
@@ -69,13 +66,13 @@ class QueryBuilderTest(unittest.TestCase):
 
         query_plan = build_query_seeds(request)
 
-        self.assertEqual(len(query_plan.query_seeds), 2)
+        self.assertEqual(len(query_plan.query_seeds), 1)
         self.assertNotIn(
             RequestSection.SEED_KEYWORDS,
             [query_seed.source for query_seed in query_plan.query_seeds],
         )
 
-    def test_build_query_seeds_skips_constraint_query_when_constraints_are_empty(self) -> None:
+    def test_build_query_seeds_keeps_two_queries_when_constraints_are_empty(self) -> None:
         request = build_valid_request()
         request.constraints.preferred_languages = []
         request.constraints.license_types = []
@@ -84,27 +81,28 @@ class QueryBuilderTest(unittest.TestCase):
         query_plan = build_query_seeds(request)
 
         self.assertEqual(len(query_plan.query_seeds), 2)
-        self.assertNotIn(
-            RequestSection.CONSTRAINTS,
-            [query_seed.source for query_seed in query_plan.query_seeds],
+        seed_keywords_query = self._find_query_by_source(
+            query_plan,
+            RequestSection.SEED_KEYWORDS,
         )
+        self.assertIsNotNone(seed_keywords_query)
+        self.assertEqual(seed_keywords_query.used_fields, ["seed_keywords"])
 
-    def test_constraint_query_tracks_used_constraint_fields(self) -> None:
+    def test_seed_keywords_query_tracks_used_constraint_fields(self) -> None:
         request = build_valid_request()
 
         query_plan = build_query_seeds(request)
-        constraint_query = self._find_query_by_source(
+        seed_keywords_query = self._find_query_by_source(
             query_plan,
-            RequestSection.CONSTRAINTS,
+            RequestSection.SEED_KEYWORDS,
         )
 
-        self.assertIsNotNone(constraint_query)
+        self.assertIsNotNone(seed_keywords_query)
         self.assertEqual(
-            constraint_query.used_fields,
+            seed_keywords_query.used_fields,
             [
+                "seed_keywords",
                 "constraints.preferred_languages",
-                "constraints.license_types",
-                "constraints.must_have_docs",
             ],
         )
 
