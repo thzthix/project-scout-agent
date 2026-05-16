@@ -1,5 +1,9 @@
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 def get_github_token() -> str:
     github_token = os.getenv("GITHUB_TOKEN", "").strip()

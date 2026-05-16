@@ -2,6 +2,7 @@ import pathlib
 import sys
 import unittest
 from unittest.mock import patch
+import os
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "src"))
 
@@ -114,14 +115,15 @@ class SearchTest(unittest.TestCase):
     def test_search_requires_github_token(self) -> None:
         query_seed = build_query_seed()
 
-        with self.assertRaisesRegex(
-            ValueError,
-            "GITHUB_TOKEN이 필요합니다",
-        ):
-            search_repositories_for_seed(
-                query_seed=query_seed,
-                github_token="",
-            )
+        with patch.dict(os.environ, {}, clear=True):
+            with self.assertRaisesRegex(
+                ValueError,
+                "GITHUB_TOKEN이 필요합니다",
+            ):
+                search_repositories_for_seed(
+                    query_seed=query_seed,
+                    github_token="",
+                )
 
     def test_search_validates_per_page_range(self) -> None:
         query_seed = build_query_seed()
