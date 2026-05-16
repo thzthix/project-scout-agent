@@ -78,6 +78,35 @@ def _build_evaluation_prompt() -> ChatPromptTemplate:
     )
 
 
+def _build_followup_reevaluation_prompt() -> ChatPromptTemplate:
+    return ChatPromptTemplate.from_messages(
+        [
+            (
+                "system",
+                (
+                    "You are revising a GitHub repository evaluation after new follow-up evidence was collected. "
+                    "Use the original evaluation as context, but update the final judgment based on the new evidence. "
+                    "Do not invent missing facts. Keep recommendation_reason and evidence_summary brief and concrete. "
+                    "Copy the provided candidate identity fields exactly."
+                ),
+            ),
+            (
+                "human",
+                (
+                    "Candidate identity:\n"
+                    "{candidate_identity}\n\n"
+                    "Original evaluation context:\n"
+                    "{evaluation_context}\n\n"
+                    "Initial evaluation:\n"
+                    "{initial_evaluation}\n\n"
+                    "Follow-up evidence:\n"
+                    "{followup_evidence}"
+                ),
+            ),
+        ]
+    )
+
+
 def _build_candidate_identity(candidate: EnrichedCandidate) -> dict[str, str]:
     return {
         "repo_name": candidate.candidate.repo_name,
@@ -142,3 +171,37 @@ def evaluate_candidates(
         )
 
     return evaluations
+
+
+def reevaluate_candidate_with_followup(
+    request: ProjectScoutRequest,
+    candidate: EnrichedCandidate,
+    initial_evaluation: RepoEvaluation,
+    followup_evidence: list[dict[str, Any]],
+    llm: StructuredOutputModel,
+) -> RepoEvaluation:
+    evaluation_context = build_evaluation_context(
+        request=request,
+        candidate=candidate,
+    )
+    prompt = _build_followup_reevaluation_prompt()
+    prompt_value = prompt.invoke(
+        {
+            "candidate_identity": _serialize_prompt_payload(
+                _build_candidate_identity(candidate)
+            ),
+            "evaluation_context": _serialize_prompt_payload(evaluation_context),
+            "initial_evaluation": _serialize_prompt_payload(
+                initial_evaluation.model_dump()
+            ),
+            "followup_evidence": _serialize_prompt_payload(
+                {"evidence_items": followup_evidence}
+            ),
+        }
+    )
+    structured_llm = llm.with_structured_output(RepoEvaluation)
+    result = structured_llm.invoke(prompt_value)
+    return _coerce_repo_evaluation(
+        result=result,
+        candidate=candidate,
+    )

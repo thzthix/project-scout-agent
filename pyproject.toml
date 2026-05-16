@@ -9,6 +9,7 @@ description = "A small, explainable agent system for scouting and evaluating pro
 requires-python = ">=3.13"
 dependencies = [
     "langchain>=1.0,<2.0",
+    "langchain-google-genai>=2.0,<3.0",
     "pydantic>=2.0,<3.0",
     "python-dotenv>=1.0,<2.0",
 ]

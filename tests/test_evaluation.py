@@ -5,7 +5,11 @@ from typing import Any
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "src"))
 
-from project_scout_agent.evaluation import evaluate_candidate, evaluate_candidates
+from project_scout_agent.evaluation import (
+    evaluate_candidate,
+    evaluate_candidates,
+    reevaluate_candidate_with_followup,
+)
 from project_scout_agent.schemas.enrichment import EnrichedCandidate
 from project_scout_agent.schemas.evaluation import RepoEvaluation
 from project_scout_agent.schemas.request import ProjectScoutRequest
@@ -190,6 +194,71 @@ class EvaluateCandidateTest(unittest.TestCase):
             "https://github.com/deepset-ai/haystack",
         )
         self.assertEqual(len(llm.structured_runnable.invocations), 2)
+
+    def test_reevaluate_candidate_with_followup_uses_initial_evaluation_and_new_evidence(self) -> None:
+        initial_evaluation = RepoEvaluation.model_validate(
+            {
+                **build_valid_evaluation_payload(),
+                "follow_up": {
+                    "confidence": 0.55,
+                    "needs_followup": True,
+                    "missing_evidence": ["maintenance_signal"],
+                    "ambiguity_reason": "Recent maintenance evidence is limited.",
+                },
+            }
+        )
+        followup_evidence = [
+            {
+                "tool_name": "fetch_repo_activity_summary",
+                "evidence": {
+                    "repo_name": "langgraph",
+                    "release_names": ["v1.2.0", "v1.1.0"],
+                    "pushed_at": "2026-05-16T12:00:00Z",
+                },
+            }
+        ]
+        llm = FakeStructuredOutputModel(
+            {
+                **build_valid_evaluation_payload(),
+                "scores": {
+                    "readme_score": 4,
+                    "docs_score": 4,
+                    "activity_score": 5,
+                    "example_score": 4,
+                    "overall_score": 5,
+                },
+                "evidence_summary": "The repository has recent pushes and named releases, which improves maintenance confidence.",
+                "follow_up": {
+                    "confidence": 0.9,
+                    "needs_followup": False,
+                    "missing_evidence": [],
+                    "ambiguity_reason": "",
+                },
+            }
+        )
+
+        reevaluation = reevaluate_candidate_with_followup(
+            request=build_valid_request(),
+            candidate=build_enriched_candidate(),
+            initial_evaluation=initial_evaluation,
+            followup_evidence=followup_evidence,
+            llm=llm,
+        )
+
+        prompt_value = llm.structured_runnable.invocations[0]
+        prompt_text = "\n".join(message.content for message in prompt_value.messages)
+
+        self.assertEqual(reevaluation.repo_name, "langgraph")
+        self.assertEqual(
+            reevaluation.repo_url,
+            "https://github.com/langchain-ai/langgraph",
+        )
+        self.assertEqual(reevaluation.scores.overall_score, 5)
+        self.assertFalse(reevaluation.follow_up.needs_followup)
+        self.assertIn('"missing_evidence": [', prompt_text)
+        self.assertIn('"maintenance_signal"', prompt_text)
+        self.assertIn('"tool_name": "fetch_repo_activity_summary"', prompt_text)
+        self.assertIn('"release_names": [', prompt_text)
 
 
 if __name__ == "__main__":
