@@ -62,6 +62,8 @@ def _build_evaluation_prompt() -> ChatPromptTemplate:
                     "Use only the provided evidence. Do not invent missing facts. "
                     "Score conservatively when evidence is weak or incomplete. "
                     "Keep recommendation_reason and evidence_summary brief and concrete. "
+                    "Write recommendation_reason in 160 characters or fewer. "
+                    "Write evidence_summary in 160 characters or fewer. "
                     "Copy the provided candidate identity fields exactly."
                 ),
             ),
@@ -87,6 +89,8 @@ def _build_followup_reevaluation_prompt() -> ChatPromptTemplate:
                     "You are revising a GitHub repository evaluation after new follow-up evidence was collected. "
                     "Use the original evaluation as context, but update the final judgment based on the new evidence. "
                     "Do not invent missing facts. Keep recommendation_reason and evidence_summary brief and concrete. "
+                    "Write recommendation_reason in 160 characters or fewer. "
+                    "Write evidence_summary in 160 characters or fewer. "
                     "Copy the provided candidate identity fields exactly."
                 ),
             ),
