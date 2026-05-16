@@ -87,3 +87,34 @@ def rerank_candidates(
         ),
         reverse=True,
     )
+
+
+def build_reranking_artifact(
+    request: ProjectScoutRequest,
+    candidates: list[EnrichedCandidate],
+) -> list[dict[str, Any]]:
+    reranked_candidates = rerank_candidates(
+        request=request,
+        candidates=candidates,
+    )
+    artifact: list[dict[str, Any]] = []
+
+    for rank, candidate in enumerate(reranked_candidates, start=1):
+        signals = build_reranking_signals(
+            request=request,
+            candidate=candidate,
+        )
+        artifact.append(
+            {
+                "rank": rank,
+                "repo_name": candidate.candidate.repo_name,
+                "repo_url": candidate.candidate.repo_url,
+                "score": {
+                    "language_match": int(signals["language_match"]),
+                    "authority_score": round(float(signals["authority_score"]), 4),
+                },
+                "signals": signals,
+            }
+        )
+
+    return artifact

@@ -5,7 +5,7 @@ from typing import Any
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "src"))
 
-from project_scout_agent.evaluation import evaluate_candidate
+from project_scout_agent.evaluation import evaluate_candidate, evaluate_candidates
 from project_scout_agent.schemas.enrichment import EnrichedCandidate
 from project_scout_agent.schemas.evaluation import RepoEvaluation
 from project_scout_agent.schemas.request import ProjectScoutRequest
@@ -48,6 +48,24 @@ def build_enriched_candidate() -> EnrichedCandidate:
     )
 
 
+def build_second_enriched_candidate() -> EnrichedCandidate:
+    return EnrichedCandidate(
+        candidate=SearchCandidate(
+            repo_name="haystack",
+            repo_url="https://github.com/deepset-ai/haystack",
+            description="LLM orchestration framework.",
+            stars=200,
+            forks=20,
+            updated_at="2026-05-15T00:00:00Z",
+        ),
+        readme_excerpt="Haystack helps build production-ready LLM applications.",
+        topics=["llm", "rag"],
+        primary_language="Python",
+        license_name="Apache-2.0",
+        homepage_url="https://haystack.deepset.ai",
+    )
+
+
 def build_valid_evaluation_payload() -> dict[str, Any]:
     return {
         "repo_name": "wrong-name",
@@ -71,17 +89,25 @@ def build_valid_evaluation_payload() -> dict[str, Any]:
 
 
 class FakeStructuredOutputRunnable:
-    def __init__(self, response: RepoEvaluation | dict[str, Any]) -> None:
+    def __init__(
+        self,
+        response: RepoEvaluation | dict[str, Any] | list[RepoEvaluation | dict[str, Any]],
+    ) -> None:
         self.response = response
         self.invocations: list[Any] = []
 
     def invoke(self, input: Any) -> RepoEvaluation | dict[str, Any]:
         self.invocations.append(input)
+        if isinstance(self.response, list):
+            return self.response[len(self.invocations) - 1]
         return self.response
 
 
 class FakeStructuredOutputModel:
-    def __init__(self, response: RepoEvaluation | dict[str, Any]) -> None:
+    def __init__(
+        self,
+        response: RepoEvaluation | dict[str, Any] | list[RepoEvaluation | dict[str, Any]],
+    ) -> None:
         self.response = response
         self.schemas: list[type[RepoEvaluation]] = []
         self.structured_runnable = FakeStructuredOutputRunnable(response)
@@ -129,6 +155,41 @@ class EvaluateCandidateTest(unittest.TestCase):
         self.assertIn('"repo_url": "https://github.com/langchain-ai/langgraph"', prompt_text)
         self.assertIn('"must_have_docs": true', prompt_text)
         self.assertIn('"readme_excerpt": "LangGraph helps build stateful agent systems."', prompt_text)
+
+    def test_evaluate_candidates_returns_evaluations_in_input_order(self) -> None:
+        llm = FakeStructuredOutputModel(
+            [
+                build_valid_evaluation_payload(),
+                {
+                    **build_valid_evaluation_payload(),
+                    "repo_name": "wrong-second-name",
+                    "repo_url": "https://wrong.example.com/second-repo",
+                    "recommendation_reason": "This repository is useful for comparing another Python LLM stack.",
+                },
+            ]
+        )
+
+        evaluations = evaluate_candidates(
+            request=build_valid_request(),
+            candidates=[
+                build_enriched_candidate(),
+                build_second_enriched_candidate(),
+            ],
+            llm=llm,
+        )
+
+        self.assertEqual(len(evaluations), 2)
+        self.assertEqual(evaluations[0].repo_name, "langgraph")
+        self.assertEqual(
+            evaluations[0].repo_url,
+            "https://github.com/langchain-ai/langgraph",
+        )
+        self.assertEqual(evaluations[1].repo_name, "haystack")
+        self.assertEqual(
+            evaluations[1].repo_url,
+            "https://github.com/deepset-ai/haystack",
+        )
+        self.assertEqual(len(llm.structured_runnable.invocations), 2)
 
 
 if __name__ == "__main__":

@@ -123,3 +123,22 @@ def evaluate_candidate(
         result=result,
         candidate=candidate,
     )
+
+
+def evaluate_candidates(
+    request: ProjectScoutRequest,
+    candidates: list[EnrichedCandidate],
+    llm: StructuredOutputModel,
+) -> list[RepoEvaluation]:
+    evaluations: list[RepoEvaluation] = []
+
+    for candidate in candidates:
+        evaluations.append(
+            evaluate_candidate(
+                request=request,
+                candidate=candidate,
+                llm=llm,
+            )
+        )
+
+    return evaluations

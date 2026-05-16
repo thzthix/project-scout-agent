@@ -6,6 +6,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "src"))
 
 from project_scout_agent.reranking import (
     build_reranking_signals,
+    build_reranking_artifact,
     rerank_candidates,
     score_candidate_for_reranking,
 )
@@ -150,6 +151,38 @@ class RerankingTest(unittest.TestCase):
         self.assertEqual(reranked_candidates[0].candidate.repo_name, "fresher-python-agent")
         self.assertEqual(reranked_candidates[1].candidate.repo_name, "older-python-agent")
         self.assertEqual(reranked_candidates[2].candidate.repo_name, "rust-agent")
+
+    def test_build_reranking_artifact_explains_rank_order(self) -> None:
+        request = build_valid_request()
+        matching_candidate = build_enriched_candidate(
+            repo_name="python-agent",
+            repo_url="https://github.com/example/python-agent",
+            stars=500,
+            forks=100,
+            updated_at="2026-05-16T00:00:00Z",
+            primary_language="Python",
+        )
+        non_matching_candidate = build_enriched_candidate(
+            repo_name="rust-agent",
+            repo_url="https://github.com/example/rust-agent",
+            stars=5000,
+            forks=800,
+            updated_at="2026-05-16T00:00:00Z",
+            primary_language="Rust",
+        )
+
+        artifact = build_reranking_artifact(
+            request=request,
+            candidates=[non_matching_candidate, matching_candidate],
+        )
+
+        self.assertEqual(artifact[0]["rank"], 1)
+        self.assertEqual(artifact[0]["repo_name"], "python-agent")
+        self.assertEqual(artifact[0]["score"]["language_match"], 1)
+        self.assertGreater(artifact[0]["score"]["authority_score"], 0.0)
+        self.assertEqual(artifact[1]["rank"], 2)
+        self.assertEqual(artifact[1]["repo_name"], "rust-agent")
+        self.assertFalse(artifact[1]["signals"]["language_match"])
 
 
 if __name__ == "__main__":
