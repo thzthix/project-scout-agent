@@ -1,0 +1,12 @@
+{
+  "candidates": [
+    {
+      "repo_name": "Long-Trainer",
+      "repo_url": "https://github.com/ENDEVSOLS/Long-Trainer",
+      "description": "Production-ready RAG framework for Python \u2014 multi-tenant chatbots with streaming, tool calling, agent mode (LangGraph), vector search (FAISS), and persistent MongoDB memory. Built on LangChain.",
+      "stars": 28,
+      "forks": 3,
+      "updated_at": "2026-05-14T05:09:40Z"
+    }
+  ]
+}

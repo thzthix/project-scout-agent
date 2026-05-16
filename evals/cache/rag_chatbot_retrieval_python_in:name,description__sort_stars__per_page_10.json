@@ -1,0 +1,84 @@
+{
+  "candidates": [
+    {
+      "repo_name": "Air-India-RAG-Chatbot",
+      "repo_url": "https://github.com/Vishalkumarjaiswal16/Air-India-RAG-Chatbot",
+      "description": "An AI-powered RAG chatbot for Air India built with AWS Bedrock, LangChain, and Python. Provides real-time support for flight schedules, bookings, and airline services using Retrieval-Augmented Generation.",
+      "stars": 9,
+      "forks": 1,
+      "updated_at": "2026-05-06T06:33:51Z"
+    },
+    {
+      "repo_name": "ChatBot-to-Write-Python-Code-RAG-Application-LLM-LLaMA-2-",
+      "repo_url": "https://github.com/YoussefMoHlemyAlpha/ChatBot-to-Write-Python-Code-RAG-Application-LLM-LLaMA-2-",
+      "description": "AI Python Tutor (Local RAG) is a Streamlit-based coding assistant powered by local Retrieval-Augmented Generation (RAG).",
+      "stars": 8,
+      "forks": 0,
+      "updated_at": "2026-01-31T09:10:27Z"
+    },
+    {
+      "repo_name": "Raju-The-Chatbot-RAG-implementation",
+      "repo_url": "https://github.com/coolnj4/Raju-The-Chatbot-RAG-implementation",
+      "description": "A Retrieval Augmented Generation (RAG) implementation in python using django and streamlit, along with a working authentication system.",
+      "stars": 6,
+      "forks": 0,
+      "updated_at": "2026-05-08T17:52:38Z"
+    },
+    {
+      "repo_name": "rag-chatbot-python-fullstack-template",
+      "repo_url": "https://github.com/shantoroy/rag-chatbot-python-fullstack-template",
+      "description": "A Retrieval-Augmented Generation (RAG) based question-answering proof-of-concept (PoC) that enables users to query documents using natural language. This system leverages local LLMs via Ollama for enhanced privacy and performance and features a chat-based interface. Built entirely with Python, including both backend an frontend.",
+      "stars": 6,
+      "forks": 1,
+      "updated_at": "2026-01-12T13:20:33Z"
+    },
+    {
+      "repo_name": "Chatbot-RAG",
+      "repo_url": "https://github.com/marwamajdoub/Chatbot-RAG",
+      "description": "A Retrieval-Augmented Generation (RAG) chatbot built in Python using embeddings, PostgreSQL with pgvector, and Hugging Face language models. This project allows a chatbot to answer user queries by retrieving relevant information from a corpus of text documents.",
+      "stars": 5,
+      "forks": 0,
+      "updated_at": "2026-01-12T08:57:57Z"
+    },
+    {
+      "repo_name": "agriculture-chatbot",
+      "repo_url": "https://github.com/DreamRealized/agriculture-chatbot",
+      "description": "The Agriculture Assistant is an LLM-powered system aiding farmers with agricultural advice. It has Frontend (React), Backend (Python), and RAG subsystems, supporting text/image/audio input, Mandarin audio output, and knowledge retrieval via vector databases.",
+      "stars": 5,
+      "forks": 1,
+      "updated_at": "2026-03-26T07:29:42Z"
+    },
+    {
+      "repo_name": "chat-with-pdfs",
+      "repo_url": "https://github.com/atefeh-komeyli/chat-with-pdfs",
+      "description": "A Python-based chatbot that uses Retrieval-Augmented Generation (RAG) to let users upload PDFs and interactively query their content with an AI model.",
+      "stars": 5,
+      "forks": 0,
+      "updated_at": "2025-05-11T20:21:01Z"
+    },
+    {
+      "repo_name": "rag-mavsdk-web",
+      "repo_url": "https://github.com/NeuralG/rag-mavsdk-web",
+      "description": "A Retrieval-augmented generation(RAG) chatbot for asking questions about mavsdk-python.",
+      "stars": 4,
+      "forks": 0,
+      "updated_at": "2026-01-10T08:05:37Z"
+    },
+    {
+      "repo_name": "RAG-Chatbot",
+      "repo_url": "https://github.com/ShoaibAbdullahKhan/RAG-Chatbot",
+      "description": "This is a simple Q&A chatbot built using Retrieval-Augmented Generation (RAG). The chatbot retrieves relevant information using embeddings and then generates answers using a DeepSeek R1 model via the Groq API. The project is implemented using the LangChain framework in Python.",
+      "stars": 3,
+      "forks": 3,
+      "updated_at": "2025-12-31T15:34:04Z"
+    },
+    {
+      "repo_name": "RAG-chatbot-python",
+      "repo_url": "https://github.com/Daniel-Kennison/RAG-chatbot-python",
+      "description": "This project implements a Retrieval-Augmented Generation (RAG) chatbot designed to assist users with booking services through conversational interactions. Leveraging advanced AI technologies, the chatbot integrates multiple data sources to provide accurate and contextually relevant responses.",
+      "stars": 3,
+      "forks": 1,
+      "updated_at": "2025-12-27T19:14:12Z"
+    }
+  ]
+}

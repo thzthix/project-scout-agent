@@ -1,0 +1,84 @@
+{
+  "candidates": [
+    {
+      "repo_name": "Multi-Agent-Orchestration",
+      "repo_url": "https://github.com/Theepankumargandhi/Multi-Agent-Orchestration",
+      "description": "Production ready LangGraph multi-agent orchestration template with supervisor routing, FastAPI + Streamlit chat UI, MCP tool calling, local RAG + knowledge graph retrieval, PostgreSQL memory, per-user auth, and CI/CD.",
+      "stars": 3,
+      "forks": 0,
+      "updated_at": "2026-05-13T13:39:55Z"
+    },
+    {
+      "repo_name": "blackgeorge",
+      "repo_url": "https://github.com/jolovicdev/blackgeorge",
+      "description": "Python Agent Framework for LLM Tool-Calling and Multi-Agent Orchestration",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-10T01:10:43Z"
+    },
+    {
+      "repo_name": "tokenops",
+      "repo_url": "https://github.com/sebslig/tokenops",
+      "description": "A Python SDK for orchestrating multi-step AI agent workflows with tool calling capabilities.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-03-12T10:40:08Z"
+    },
+    {
+      "repo_name": "langgraph-react-agent",
+      "repo_url": "https://github.com/nnaghera/langgraph-react-agent",
+      "description": "A modular Python template for LangGraph-based LLM agents with function/tool calling, featuring Ollama integration, multi-step reasoning, and visual workflow orchestration.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-11-03T05:06:56Z"
+    },
+    {
+      "repo_name": "claude-swarm",
+      "repo_url": "https://github.com/chrisarseno/claude-swarm",
+      "description": "Model-agnostic LLM orchestration with multi-backend routing, agent loop with tool calling, and C-Suite integration",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-04-21T15:25:32Z"
+    },
+    {
+      "repo_name": "Azure-AI-Foundry-Helpdesk-Triage",
+      "repo_url": "https://github.com/jonathanscholtes/Azure-AI-Foundry-Helpdesk-Triage",
+      "description": "End-to-end Azure AI Foundry workshop demonstrating agent routing, tool-calling, deployment, and multi-agent orchestration through a helpdesk triage scenario.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-14T17:06:44Z"
+    },
+    {
+      "repo_name": "Agentic-AI-Workflows",
+      "repo_url": "https://github.com/rehan243/Agentic-AI-Workflows",
+      "description": "Production AI Agents for enterprise automation \u2014 8+ specialized agents using LangChain, OpenAI function calling, and FastAPI. Multi-agent orchestration, tool use, planning loops, guardrails.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-15T19:46:56Z"
+    },
+    {
+      "repo_name": "ai-agent-orchestrator",
+      "repo_url": "https://github.com/MentalVibez/ai-agent-orchestrator",
+      "description": "Multi-agent AI orchestrator: MCP tool calling, RAG (ChromaDB), async DB, OTel GenAI tracing, HITL, conditional workflows. Bedrock/OpenAI/Ollama.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-03-10T06:33:39Z"
+    },
+    {
+      "repo_name": "LangGraphDemo",
+      "repo_url": "https://github.com/captainIT/LangGraphDemo",
+      "description": "LangGraph-based Python demo project for building multi-step AI agent workflows with state management, tool calling, and graph-driven orchestration.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-14T06:37:09Z"
+    },
+    {
+      "repo_name": "walter-ai-neural-core",
+      "repo_url": "https://github.com/amnotwallas/walter-ai-neural-core",
+      "description": "Advanced Multi-Agent orchestration engine for AI-powered interactions. Features real-time SSE streaming, autonomous   tool-use (Function Calling), and Clean Architecture. Powered by FastAPI & Llama 3.1.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-14T02:36:27Z"
+    }
+  ]
+}

@@ -30,6 +30,7 @@ def search_repositories_for_seed(
     query_seed: QuerySeed,
     github_token: str | None = None,
     per_page: int = 10,
+    sort_by: str | None = None,
 ) -> SearchResultForSeed:
     resolved_github_token = github_token.strip() if github_token else get_github_token()
 
@@ -38,6 +39,8 @@ def search_repositories_for_seed(
 
     encoded_query = urllib.parse.quote(query_seed.query)
     search_url = f"{GITHUB_REPOSITORY_SEARCH_URL}?q={encoded_query}&per_page={per_page}"
+    if sort_by:
+        search_url = f"{search_url}&sort={urllib.parse.quote(sort_by)}&order=desc"
     request = urllib.request.Request(
         search_url,
         headers={
@@ -72,6 +75,7 @@ def search_repositories(
     query_plan: QueryPlan,
     github_token: str | None = None,
     per_page: int = 10,
+    sort_by: str | None = None,
 ) -> list[SearchResultForSeed]:
     search_results: list[SearchResultForSeed] = []
 
@@ -81,6 +85,7 @@ def search_repositories(
                 query_seed=query_seed,
                 github_token=github_token,
                 per_page=per_page,
+                sort_by=sort_by,
             )
         )
 

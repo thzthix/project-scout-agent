@@ -1,0 +1,12 @@
+{
+  "candidates": [
+    {
+      "repo_name": "guidelines-chatbot",
+      "repo_url": "https://github.com/OriOrihuela/guidelines-chatbot",
+      "description": "Guidelines Chatbot is a lightweight reference implementation that shows how to wire up `google-adk` agents with a Storyblok content space. The repository is structured as a reusable Python package (`storyblok_agent`) plus a tiny CLI entry point (`main.py`) you can extend for your own workflows or demos.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-11-21T08:42:05Z"
+    }
+  ]
+}

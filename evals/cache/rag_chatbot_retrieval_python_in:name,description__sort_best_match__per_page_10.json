@@ -1,0 +1,84 @@
+{
+  "candidates": [
+    {
+      "repo_name": "rag",
+      "repo_url": "https://github.com/kinnla/rag",
+      "description": "Python Scripts to build a Retrieval Augmented Generation chatbot based on elasticsearch and ollama",
+      "stars": 2,
+      "forks": 3,
+      "updated_at": "2024-10-19T12:47:54Z"
+    },
+    {
+      "repo_name": "RAG-Chatbot",
+      "repo_url": "https://github.com/ShoaibAbdullahKhan/RAG-Chatbot",
+      "description": "This is a simple Q&A chatbot built using Retrieval-Augmented Generation (RAG). The chatbot retrieves relevant information using embeddings and then generates answers using a DeepSeek R1 model via the Groq API. The project is implemented using the LangChain framework in Python.",
+      "stars": 3,
+      "forks": 3,
+      "updated_at": "2025-12-31T15:34:04Z"
+    },
+    {
+      "repo_name": "ChatBot-to-Write-Python-Code-RAG-Application-LLM-LLaMA-2-",
+      "repo_url": "https://github.com/YoussefMoHlemyAlpha/ChatBot-to-Write-Python-Code-RAG-Application-LLM-LLaMA-2-",
+      "description": "AI Python Tutor (Local RAG) is a Streamlit-based coding assistant powered by local Retrieval-Augmented Generation (RAG).",
+      "stars": 8,
+      "forks": 0,
+      "updated_at": "2026-01-31T09:10:27Z"
+    },
+    {
+      "repo_name": "Air-India-RAG-Chatbot",
+      "repo_url": "https://github.com/Vishalkumarjaiswal16/Air-India-RAG-Chatbot",
+      "description": "An AI-powered RAG chatbot for Air India built with AWS Bedrock, LangChain, and Python. Provides real-time support for flight schedules, bookings, and airline services using Retrieval-Augmented Generation.",
+      "stars": 9,
+      "forks": 1,
+      "updated_at": "2026-05-06T06:33:51Z"
+    },
+    {
+      "repo_name": "Raju-The-Chatbot-RAG-implementation",
+      "repo_url": "https://github.com/coolnj4/Raju-The-Chatbot-RAG-implementation",
+      "description": "A Retrieval Augmented Generation (RAG) implementation in python using django and streamlit, along with a working authentication system.",
+      "stars": 6,
+      "forks": 0,
+      "updated_at": "2026-05-08T17:52:38Z"
+    },
+    {
+      "repo_name": "Universal-PDF-RAG-Chatbot",
+      "repo_url": "https://github.com/Ratnesh-181998/Universal-PDF-RAG-Chatbot",
+      "description": "RAG-powered Document Q&A app using Python, Streamlit, LangChain, FAISS, and HuggingFace embeddings. Supports multi-PDF ingestion, vector search, and high-speed Llama-3/Groq & OpenAI inference for accurate, context-aware answers. Modern Generative AI chatbot for knowledge retrieval.",
+      "stars": 2,
+      "forks": 2,
+      "updated_at": "2026-02-23T05:06:43Z"
+    },
+    {
+      "repo_name": "rag-chatbot-python-fullstack-template",
+      "repo_url": "https://github.com/shantoroy/rag-chatbot-python-fullstack-template",
+      "description": "A Retrieval-Augmented Generation (RAG) based question-answering proof-of-concept (PoC) that enables users to query documents using natural language. This system leverages local LLMs via Ollama for enhanced privacy and performance and features a chat-based interface. Built entirely with Python, including both backend an frontend.",
+      "stars": 6,
+      "forks": 1,
+      "updated_at": "2026-01-12T13:20:33Z"
+    },
+    {
+      "repo_name": "rag-mavsdk-web",
+      "repo_url": "https://github.com/NeuralG/rag-mavsdk-web",
+      "description": "A Retrieval-augmented generation(RAG) chatbot for asking questions about mavsdk-python.",
+      "stars": 4,
+      "forks": 0,
+      "updated_at": "2026-01-10T08:05:37Z"
+    },
+    {
+      "repo_name": "project-based-rag-ai",
+      "repo_url": "https://github.com/hardikchotaliya/project-based-rag-ai",
+      "description": "This Streamlit-based Python script sets up a local RAG (Retrieval-Augmented Generation) chatbot using the DeepSeek R1 model and ChromaDB for vector storage.",
+      "stars": 2,
+      "forks": 2,
+      "updated_at": "2025-02-27T06:03:15Z"
+    },
+    {
+      "repo_name": "Chatbot-RAG",
+      "repo_url": "https://github.com/marwamajdoub/Chatbot-RAG",
+      "description": "A Retrieval-Augmented Generation (RAG) chatbot built in Python using embeddings, PostgreSQL with pgvector, and Hugging Face language models. This project allows a chatbot to answer user queries by retrieving relevant information from a corpus of text documents.",
+      "stars": 5,
+      "forks": 0,
+      "updated_at": "2026-01-12T08:57:57Z"
+    }
+  ]
+}
