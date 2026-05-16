@@ -1,13 +1,16 @@
 import pathlib
 import sys
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "src"))
 
 from project_scout_agent.constants import RequestSection
-from project_scout_agent.schemas.query_seed import QuerySeed
+from project_scout_agent.schemas.query_seed import QueryPlan, QuerySeed
+from project_scout_agent.schemas.search_candidate import SearchResultForSeed
 from project_scout_agent.search import (
     _build_search_candidates,
+    search_repositories,
     search_repositories_for_seed,
 )
 
@@ -21,6 +24,50 @@ def build_query_seed() -> QuerySeed:
 
 
 class SearchTest(unittest.TestCase):
+    def test_search_repositories_runs_all_query_seeds_in_order(self) -> None:
+        query_plan = QueryPlan(
+            query_seeds=[
+                QuerySeed(
+                    query="python agent workflow reference repository",
+                    source=RequestSection.TARGET_REPOSITORY_DESCRIPTION,
+                    used_fields=["target_repository_description"],
+                ),
+                QuerySeed(
+                    query="langchain langgraph tool calling",
+                    source=RequestSection.SEED_KEYWORDS,
+                    used_fields=["seed_keywords"],
+                ),
+            ]
+        )
+
+        with patch(
+            "project_scout_agent.search.search_repositories_for_seed",
+            side_effect=[
+                SearchResultForSeed(
+                    query_seed=query_plan.query_seeds[0],
+                    candidates=[],
+                ),
+                SearchResultForSeed(
+                    query_seed=query_plan.query_seeds[1],
+                    candidates=[],
+                ),
+            ],
+        ) as mock_search:
+            search_results = search_repositories(
+                query_plan=query_plan,
+                github_token="test-token",
+                per_page=10,
+            )
+
+        self.assertEqual(len(search_results), 2)
+        self.assertEqual(search_results[0].query_seed.query, query_plan.query_seeds[0].query)
+        self.assertEqual(search_results[1].query_seed.query, query_plan.query_seeds[1].query)
+        self.assertEqual(mock_search.call_count, 2)
+        first_call = mock_search.call_args_list[0].kwargs
+        second_call = mock_search.call_args_list[1].kwargs
+        self.assertEqual(first_call["query_seed"], query_plan.query_seeds[0])
+        self.assertEqual(second_call["query_seed"], query_plan.query_seeds[1])
+
     def test_build_search_candidates_maps_github_payload(self) -> None:
         payload = {
             "items": [

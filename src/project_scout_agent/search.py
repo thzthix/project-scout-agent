@@ -5,7 +5,7 @@ from urllib.error import HTTPError, URLError
 
 from project_scout_agent.constants import GITHUB_REPOSITORY_SEARCH_URL
 from project_scout_agent.config import get_github_token
-from project_scout_agent.schemas.query_seed import QuerySeed
+from project_scout_agent.schemas.query_seed import QueryPlan, QuerySeed
 from project_scout_agent.schemas.search_candidate import (
     SearchCandidate,
     SearchResultForSeed,
@@ -66,3 +66,22 @@ def search_repositories_for_seed(
         query_seed=query_seed,
         candidates=candidates,
     )
+
+
+def search_repositories(
+    query_plan: QueryPlan,
+    github_token: str | None = None,
+    per_page: int = 10,
+) -> list[SearchResultForSeed]:
+    search_results: list[SearchResultForSeed] = []
+
+    for query_seed in query_plan.query_seeds:
+        search_results.append(
+            search_repositories_for_seed(
+                query_seed=query_seed,
+                github_token=github_token,
+                per_page=per_page,
+            )
+        )
+
+    return search_results
