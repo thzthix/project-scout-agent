@@ -1,0 +1,28 @@
+{
+  "candidates": [
+    {
+      "repo_name": "ai-code-eval",
+      "repo_url": "https://github.com/anasalig44-dotcom/ai-code-eval",
+      "description": "A Python framework for structured side-by-side evaluation of AI-generated code across multiple dimensions \u2014 instruction following, code quality, tool usage, testing, and communication clarity. Built for benchmarking agentic coding models on real-world repository tasks.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-04-14T23:53:04Z"
+    },
+    {
+      "repo_name": "pydantic-ai-lab",
+      "repo_url": "https://github.com/harehimself/pydantic-ai-lab",
+      "description": "Experimentation with PydanticAI, a Python agent framework designed to make it less painful to build production grade applications with Generative AI. This repository contains test implementations, error handling patterns, and validation approaches for structured AI outputs.",
+      "stars": 1,
+      "forks": 0,
+      "updated_at": "2025-06-30T07:11:56Z"
+    },
+    {
+      "repo_name": "AI_Vacuum_Cleaner_Agent",
+      "repo_url": "https://github.com/moali811/AI_Vacuum_Cleaner_Agent",
+      "description": "This repository contains an AI-based Vacuum Cleaner Agent implementation using Python. The project is structured around the PEAS (Performance, Environment, Actuators, Sensors) framework and simulates an intelligent agent operating in a 4x4 grid environment.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-02-13T21:45:47Z"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "candidates": [
+    {
+      "repo_name": "LangGraphDemo",
+      "repo_url": "https://github.com/captainIT/LangGraphDemo",
+      "description": "LangGraph-based Python demo project for building multi-step AI agent workflows with state management, tool calling, and graph-driven orchestration.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-14T06:37:09Z"
+    },
+    {
+      "repo_name": "blackgeorge",
+      "repo_url": "https://github.com/jolovicdev/blackgeorge",
+      "description": "Python Agent Framework for LLM Tool-Calling and Multi-Agent Orchestration",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-10T01:10:43Z"
+    },
+    {
+      "repo_name": "tokenops",
+      "repo_url": "https://github.com/sebslig/tokenops",
+      "description": "A Python SDK for orchestrating multi-step AI agent workflows with tool calling capabilities.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-03-12T10:40:08Z"
+    },
+    {
+      "repo_name": "langgraph-react-agent",
+      "repo_url": "https://github.com/nnaghera/langgraph-react-agent",
+      "description": "A modular Python template for LangGraph-based LLM agents with function/tool calling, featuring Ollama integration, multi-step reasoning, and visual workflow orchestration.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-11-03T05:06:56Z"
+    },
+    {
+      "repo_name": "Agentic_AI",
+      "repo_url": "https://github.com/Nihar3453/Agentic_AI",
+      "description": "A practical demonstration of building and orchestrating tool-using language agents with Mistral LLMs and LangGraph. The project showcases both a minimal function-calling workflow and an advanced multi-step agent flow for structured, data-driven reasoning using Python tools and pandas.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-10-07T10:02:52Z"
+    }
+  ]
+}

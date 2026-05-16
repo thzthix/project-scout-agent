@@ -1,0 +1,60 @@
+{
+  "candidates": [
+    {
+      "repo_name": "corsoJavaSpringAI",
+      "repo_url": "https://github.com/carlocond/corsoJavaSpringAI",
+      "description": "Questo repository raccoglie una serie di esercizi e progetti sviluppati durante un corso dedicato a Java con framework Spring Boot e Spring AI.",
+      "stars": 1,
+      "forks": 0,
+      "updated_at": "2026-05-06T15:37:03Z"
+    },
+    {
+      "repo_name": "Java-Spring-Framework-6-Spring-Boot-3-Spring-AI-By-Telusko",
+      "repo_url": "https://github.com/ShekharSakat360/Java-Spring-Framework-6-Spring-Boot-3-Spring-AI-By-Telusko",
+      "description": "\ud83d\ude80 Java Spring Framework 6 with Spring Boot 3 & Spring AI - Telusko Style  This repository contains hands-on projects and learning resources based on Java Spring Framework 6 and Spring Boot 3, inspired by Telusko's practical and concept-driven approach.  \u2705 Covers:  Spring Core, MVC, AOP  Spring Boot 3 Features  JDBC, Spring Data JPA  ",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-08-23T10:35:32Z"
+    },
+    {
+      "repo_name": "Java-Aiven",
+      "repo_url": "https://github.com/captainhaddock18/Java-Aiven",
+      "description": "This repository contains a Java Spring Boot project where I explored building a web application using the Spring Boot framework. The application is designed to connect to a cloud-hosted MySQL database provided by Aiven, a cloud database service provider.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2024-06-10T14:18:05Z"
+    },
+    {
+      "repo_name": "spring-ai-intro",
+      "repo_url": "https://github.com/Intercont/spring-ai-intro",
+      "description": "This repository is a practical implementation of Spring AI with Java to integrate the power of OpenAI ChatGPT into microservices, step by step, using the most up-to-date resources from the framework",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-06-23T17:37:14Z"
+    },
+    {
+      "repo_name": "java-ai-labs",
+      "repo_url": "https://github.com/django-hunter/java-ai-labs",
+      "description": "A hands-on learning repository for building AI-powered applications in Java.  Covers the two major frameworks in the Java AI ecosystem \u2014 LangChain4j and Spring AI \u2014 through progressively complex labs, from streaming output to full RAG pipelines.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-03-30T14:56:33Z"
+    },
+    {
+      "repo_name": "Javacode-Practice-",
+      "repo_url": "https://github.com/Pundalik-Desai/Javacode-Practice-",
+      "description": "This repository contains Java code practiced from Telusko Edutech\u2019s courses, covering Core Java, Spring Framework 6, Spring Boot 3, and Spring AI. It includes hands-on examples and mini-projects reflecting my learning journey in modern Java development.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-08-05T18:21:07Z"
+    },
+    {
+      "repo_name": "Airport_App-with-Spring_Core-And-ORM",
+      "repo_url": "https://github.com/Harishreddyneelapu/Airport_App-with-Spring_Core-And-ORM",
+      "description": "This repository contains a simple Airport Management System implemented in Java using the Spring Framework and Hibernate for data persistence. The system allows users to perform various operations related to airports, such as adding, updating, and deleting airport information.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2023-11-26T06:53:26Z"
+    }
+  ]
+}

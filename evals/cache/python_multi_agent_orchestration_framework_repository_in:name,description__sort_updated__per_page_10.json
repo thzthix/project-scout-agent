@@ -1,0 +1,20 @@
+{
+  "candidates": [
+    {
+      "repo_name": "Github-Harden",
+      "repo_url": "https://github.com/Raphasha27/Github-Harden",
+      "description": "\ud83d\udee1\ufe0f Advanced multi-language security framework (C, Python, Go, TS) for repository hardening, automated auditing, and AI Agent self-improvement orchestration. Featuring the Future AGI platform.",
+      "stars": 2,
+      "forks": 0,
+      "updated_at": "2026-05-15T12:34:59Z"
+    },
+    {
+      "repo_name": "agent-framework-lab",
+      "repo_url": "https://github.com/PowerPlatformCave/agent-framework-lab",
+      "description": "This repository is a personal lab to experiment with the Microsoft Agent Framework and Azure AI Foundry. It includes a minimal Python setup, sample agents, orchestration patterns, and Azure integrations to prototype intelligent multi-agent systems and explore new ideas.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-10-07T23:07:41Z"
+    }
+  ]
+}

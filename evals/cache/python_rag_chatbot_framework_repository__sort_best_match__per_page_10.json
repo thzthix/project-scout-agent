@@ -1,0 +1,20 @@
+{
+  "candidates": [
+    {
+      "repo_name": "Intelligent-Document-Question-Answering-System-Using-Retrieval-Augmented-Generation-RAG-",
+      "repo_url": "https://github.com/devpatel0005/Intelligent-Document-Question-Answering-System-Using-Retrieval-Augmented-Generation-RAG-",
+      "description": "This repository showcases a simple yet powerful chatbot built using the LangChain framework in a Jupyter Notebook environment. The chatbot leverages modular LangChain components for conversational AI, making it flexible and easy to integrate with various backends or memory stores.",
+      "stars": 2,
+      "forks": 1,
+      "updated_at": "2025-12-19T06:18:12Z"
+    },
+    {
+      "repo_name": "llamaindex_showcase",
+      "repo_url": "https://github.com/extrawest/llamaindex_showcase",
+      "description": "This repository contains a collection of demonstration projects showcasing various capabilities and applications of LlamaIndex, a powerful data framework for building LLM applications with custom data. Each tutorial focuses on a specific aspect of LlamaIndex functionality, ranging from basic usage to advanced features like RAG, chatbots, etc.",
+      "stars": 1,
+      "forks": 0,
+      "updated_at": "2025-06-13T17:20:57Z"
+    }
+  ]
+}

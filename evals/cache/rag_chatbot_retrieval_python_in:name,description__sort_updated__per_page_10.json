@@ -1,0 +1,84 @@
+{
+  "candidates": [
+    {
+      "repo_name": "rag-chatbot",
+      "repo_url": "https://github.com/10tothepowerof6/rag-chatbot",
+      "description": "A RAG-based customer support chatbot built with Python, ChromaDB for local document retrieval",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-14T11:55:59Z"
+    },
+    {
+      "repo_name": "enterprise-rag-chatbot",
+      "repo_url": "https://github.com/danielmanka89/enterprise-rag-chatbot",
+      "description": "Production-ready RAG (Retrieval-Augmented Generation) chatbot that answers questions from documents with accurate source citations. Demonstrates core concepts used by OpenAI, Microsoft, and Google for enterprise document Q&A. Built with Python and OpenAI GPT.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-14T04:41:50Z"
+    },
+    {
+      "repo_name": "f1-rag",
+      "repo_url": "https://github.com/hall4jm/f1-rag",
+      "description": "Hybrid RAG chatbot for Formula 1 \u2014 Wikipedia narrative via vector retrieval, factual lookups via the Jolpica F1 API. Python \u00b7 Streamlit \u00b7 ChromaDB \u00b7 BGE \u00b7 Groq.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-14T03:15:42Z"
+    },
+    {
+      "repo_name": "llm-rag-chatbot",
+      "repo_url": "https://github.com/Tsoneva-Vyara/llm-rag-chatbot",
+      "description": "AI chatbot project using RAG architecture for intelligent document retrieval and language models., built with Python and Jupyter Notebook.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-14T13:19:03Z"
+    },
+    {
+      "repo_name": "Hacker-bot",
+      "repo_url": "https://github.com/moreswaraj702-hue/Hacker-bot",
+      "description": "Hacker Bot is a local Python RAG chatbot for networking and cybersecurity books that extracts PDF content, builds hybrid FAISS + BM25 retrieval, and answers questions through a local Ollama model.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-13T15:59:06Z"
+    },
+    {
+      "repo_name": "PolyU-EEE-Programme-Advisor",
+      "repo_url": "https://github.com/kataru0524/PolyU-EEE-Programme-Advisor",
+      "description": "A Retrieval-Augmented Generation (RAG) chatbot programme advising solution with a custom Python dataset processing pipeline for prospective students",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-12T05:51:28Z"
+    },
+    {
+      "repo_name": "Rag-Based-Pdf-Chatbot",
+      "repo_url": "https://github.com/HariNayan/Rag-Based-Pdf-Chatbot",
+      "description": "RAG-based PDF Chatbot built with Python, Sentence Transformers, FAISS, and LLM APIs. The system parses PDFs, generates semantic embeddings, retrieves relevant context using vector search, and produces grounded answers through Retrieval-Augmented Generation (RAG). Currently supports semantic document querying with modular architecture in progress.",
+      "stars": 1,
+      "forks": 0,
+      "updated_at": "2026-05-11T22:45:15Z"
+    },
+    {
+      "repo_name": "Marg-s_Minimart_Chatbot",
+      "repo_url": "https://github.com/Maddhav/Marg-s_Minimart_Chatbot",
+      "description": "AI-powered customer service chatbot for a retail gas station built with Python, LangChain, and Groq LLM. Uses RAG (Retrieval Augmented Generation) to answer customer questions from a custom knowledge base.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-10T18:38:59Z"
+    },
+    {
+      "repo_name": "AI-Agent-With-Python-Ollama-Langchain-RAG-",
+      "repo_url": "https://github.com/bobbilichandrika/AI-Agent-With-Python-Ollama-Langchain-RAG-",
+      "description": "An AI-powered restaurant review chatbot built using LangChain, Ollama, and ChromaDB. This project uses Retrieval-Augmented Generation (RAG) to answer user questions based on customer reviews stored in a CSV dataset.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-10T13:44:45Z"
+    },
+    {
+      "repo_name": "ai-chatbot",
+      "repo_url": "https://github.com/siddheshpatwa/ai-chatbot",
+      "description": "Local AI assistant built with Python, FastAPI, React, and open-source LLMs. Supports document upload, semantic search, RAG pipelines, vector databases, and conversational chat using custom knowledge. Designed for learning AI architecture, embeddings, retrieval, and local inference without paid APIs.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-10T05:24:36Z"
+    }
+  ]
+}

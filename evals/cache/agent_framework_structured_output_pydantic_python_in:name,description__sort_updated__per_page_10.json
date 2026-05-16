@@ -1,0 +1,20 @@
+{
+  "candidates": [
+    {
+      "repo_name": "nextract",
+      "repo_url": "https://github.com/nexla-opensource/nextract",
+      "description": "A lightweight Python framework for extracting structured data from files using Pydantic AI Agent. Supports PDFs, images, documents, and more with JSON Schema/Pydantic outputs, batch processing, and cost estimation.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-05-12T17:19:14Z"
+    },
+    {
+      "repo_name": "pydantic-ai-lab",
+      "repo_url": "https://github.com/harehimself/pydantic-ai-lab",
+      "description": "Experimentation with PydanticAI, a Python agent framework designed to make it less painful to build production grade applications with Generative AI. This repository contains test implementations, error handling patterns, and validation approaches for structured AI outputs.",
+      "stars": 1,
+      "forks": 0,
+      "updated_at": "2025-06-30T07:11:56Z"
+    }
+  ]
+}

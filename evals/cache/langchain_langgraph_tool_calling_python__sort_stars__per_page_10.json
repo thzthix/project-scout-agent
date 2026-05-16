@@ -1,0 +1,84 @@
+{
+  "candidates": [
+    {
+      "repo_name": "tool-ahead-of-time",
+      "repo_url": "https://github.com/leockl/tool-ahead-of-time",
+      "description": "This is a Python package to add tool calling capabilities to newly released LLMs on LangChain's ChatOpenAI, AzureAIChatCompletionsModel and ChatBedrockConverse classes ahead of time before LangChain and LangGraph supports it!",
+      "stars": 118,
+      "forks": 12,
+      "updated_at": "2026-05-02T07:22:39Z"
+    },
+    {
+      "repo_name": "Long-Trainer",
+      "repo_url": "https://github.com/ENDEVSOLS/Long-Trainer",
+      "description": "Production-ready RAG framework for Python \u2014 multi-tenant chatbots with streaming, tool calling, agent mode (LangGraph), vector search (FAISS), and persistent MongoDB memory. Built on LangChain.",
+      "stars": 28,
+      "forks": 3,
+      "updated_at": "2026-05-14T05:09:40Z"
+    },
+    {
+      "repo_name": "neurobot-conversational-ai",
+      "repo_url": "https://github.com/Ashutosh-AIBOT/neurobot-conversational-ai",
+      "description": "LangGraph-powered conversational AI assistant \u2014 multi-turn memory, OpenRouter API, tool calling, OOP architecture. Live on Render.",
+      "stars": 4,
+      "forks": 0,
+      "updated_at": "2026-04-28T15:31:25Z"
+    },
+    {
+      "repo_name": "AgenticAI-OnRamp-with-Langgraph",
+      "repo_url": "https://github.com/PrynAI/AgenticAI-OnRamp-with-Langgraph",
+      "description": "Branch-based learning repo for Agentic AI and LLM engineering with LangGraph: ReAct tool calling, Agentic RAG, MCP, Reflection, Reflexion, Human-in-the-loop memory, and DeepAgents examples.",
+      "stars": 4,
+      "forks": 1,
+      "updated_at": "2026-05-15T05:25:18Z"
+    },
+    {
+      "repo_name": "job-assistant-ai",
+      "repo_url": "https://github.com/AndyV01/job-assistant-ai",
+      "description": "Asistente laboral con arquitectura multi-agente, LLM tool calling y CV Optimizer. FastAPI \u00b7 React \u00b7 LangChain \u00b7 Groq \u00b7 Adzuna API  \u00b7  RAG  \u00b7  LangGraph \u00b7  LangSmith",
+      "stars": 3,
+      "forks": 1,
+      "updated_at": "2026-04-14T18:33:08Z"
+    },
+    {
+      "repo_name": "Personnel_chatbot",
+      "repo_url": "https://github.com/diaazg/Personnel_chatbot",
+      "description": "My LangGraph-built AI assistant that provides conversational access to my professional portfolio. It leverages tool-calling to dynamically fetch and present data from my GitHub, answer questions about my skills, and discuss my project work.",
+      "stars": 3,
+      "forks": 0,
+      "updated_at": "2025-11-03T14:51:47Z"
+    },
+    {
+      "repo_name": "toolsuit",
+      "repo_url": "https://github.com/sinsniwal/toolsuit",
+      "description": "A zero-dependency Python decorator that hides internal arguments from LLM tool-calling schemas via __signature__ mutation.",
+      "stars": 3,
+      "forks": 1,
+      "updated_at": "2026-04-26T13:10:36Z"
+    },
+    {
+      "repo_name": "llm-agents-experiments",
+      "repo_url": "https://github.com/ashaniwale-codestack/llm-agents-experiments",
+      "description": "LLM Agent System with Tool Calling & LangChain Workflows (Groq + Python)",
+      "stars": 1,
+      "forks": 0,
+      "updated_at": "2026-04-26T19:46:26Z"
+    },
+    {
+      "repo_name": "LangGraph-SQL-Agent",
+      "repo_url": "https://github.com/muneeb-rashid-cyan/LangGraph-SQL-Agent",
+      "description": "Production-oriented LangGraph agent that answers natural language questions about an e-commerce database \u2014 covers ReAct loop, tool calling, human-in-the-loop, memory persistence, and error         recovery.",
+      "stars": 1,
+      "forks": 0,
+      "updated_at": "2026-04-07T20:40:03Z"
+    },
+    {
+      "repo_name": "agentic-doc-analyst",
+      "repo_url": "https://github.com/GouravJr/agentic-doc-analyst",
+      "description": "Autonomous AI agent for multi-document analysis with LangGraph, tool calling, and multi-step reasoning.",
+      "stars": 1,
+      "forks": 0,
+      "updated_at": "2026-04-22T12:22:46Z"
+    }
+  ]
+}

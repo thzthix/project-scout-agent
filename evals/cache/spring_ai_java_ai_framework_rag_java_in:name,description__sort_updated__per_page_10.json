@@ -1,0 +1,28 @@
+{
+  "candidates": [
+    {
+      "repo_name": "Java_Spring_AI_Project",
+      "repo_url": "https://github.com/shafqatgreat/Java_Spring_AI_Project",
+      "description": "A professional-grade implementation of Retrieval-Augmented Generation (RAG) using the Spring AI framework. This project demonstrates how to integrate Large Language Models (LLMs) like Google Gemini with local vector storage to create context-aware AI applications.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-04-10T08:09:40Z"
+    },
+    {
+      "repo_name": "java-ai-labs",
+      "repo_url": "https://github.com/django-hunter/java-ai-labs",
+      "description": "A hands-on learning repository for building AI-powered applications in Java.  Covers the two major frameworks in the Java AI ecosystem \u2014 LangChain4j and Spring AI \u2014 through progressively complex labs, from streaming output to full RAG pipelines.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-03-30T14:56:33Z"
+    },
+    {
+      "repo_name": "MedExtractRAGBased",
+      "repo_url": "https://github.com/NitishKumarSinha213/MedExtractRAGBased",
+      "description": "MedExtract AI is a high-precision medical data extraction framework built with Java 21, Spring Boot, and LangChain4j. It utilizes a \"Small-to-Big\" (Parent Document) Retrieval-Augmented Generation (RAG) pattern to ensure medical headers (like Patient Names) are never lost during semantic search, even when using local LLMs.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-03-16T19:38:06Z"
+    }
+  ]
+}

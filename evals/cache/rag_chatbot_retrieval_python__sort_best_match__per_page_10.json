@@ -1,0 +1,84 @@
+{
+  "candidates": [
+    {
+      "repo_name": "local-LLM-with-RAG",
+      "repo_url": "https://github.com/amscotti/local-LLM-with-RAG",
+      "description": "Running local Language Language Models (LLM) to perform Retrieval-Augmented Generation (RAG)",
+      "stars": 284,
+      "forks": 54,
+      "updated_at": "2026-05-15T14:20:05Z"
+    },
+    {
+      "repo_name": "Retrieval-Augmented-Generation-Intro-Project",
+      "repo_url": "https://github.com/HenryHengLUO/Retrieval-Augmented-Generation-Intro-Project",
+      "description": "This project aims to introduce and demonstrate the practical applications of RAG using Python code in a Jupyter Notebook environment.",
+      "stars": 65,
+      "forks": 27,
+      "updated_at": "2026-04-07T07:51:58Z"
+    },
+    {
+      "repo_name": "rag-template",
+      "repo_url": "https://github.com/stackitcloud/rag-template",
+      "description": "Template for AI chatbots & document management using Retrieval-Augmented Generation with vector search and FastAPI.",
+      "stars": 81,
+      "forks": 8,
+      "updated_at": "2026-05-11T05:39:17Z"
+    },
+    {
+      "repo_name": "rag-security-scanner",
+      "repo_url": "https://github.com/olegnazarov/rag-security-scanner",
+      "description": "RAG/LLM Security Scanner identifies critical vulnerabilities in AI-powered applications, including chatbots, virtual assistants, and knowledge retrieval systems.",
+      "stars": 68,
+      "forks": 10,
+      "updated_at": "2026-05-15T23:01:54Z"
+    },
+    {
+      "repo_name": "LangChain-Pinecone-RAG",
+      "repo_url": "https://github.com/ThomasJanssen-tech/LangChain-Pinecone-RAG",
+      "description": "",
+      "stars": 50,
+      "forks": 15,
+      "updated_at": "2026-04-27T19:51:24Z"
+    },
+    {
+      "repo_name": "ragctl",
+      "repo_url": "https://github.com/datallmhub/ragctl",
+      "description": "A powerful CLI tool to manage, test, and optimize RAG pipelines. Streamline your Retrieval-Augmented Generation workflows from terminal.",
+      "stars": 20,
+      "forks": 6,
+      "updated_at": "2026-04-29T06:38:13Z"
+    },
+    {
+      "repo_name": "rag-chatbot",
+      "repo_url": "https://github.com/mrankitvish/rag-chatbot",
+      "description": "A FastAPI application that uses Retrieval-Augmented Generation (RAG) with a large language model (LLM) to create an interactive chatbot. This chatbot leverages PostgreSQL vector store for efficient document retrieval and supports text and CSV data sources for initialization.",
+      "stars": 6,
+      "forks": 4,
+      "updated_at": "2026-01-28T09:50:43Z"
+    },
+    {
+      "repo_name": "RAG-Powered-LLM-Chatbot",
+      "repo_url": "https://github.com/RajdeepDas43/RAG-Powered-LLM-Chatbot",
+      "description": "This repository develops a RAG-powered chatbot that answers questions based on a specific PDF document. Key objectives include:  Chatbot Development: Chatbot using Retrieval-Augmented Generation (RAG) Dataset Creation, Performance Evaluation",
+      "stars": 8,
+      "forks": 5,
+      "updated_at": "2026-05-10T08:27:11Z"
+    },
+    {
+      "repo_name": "RAG-Based-University-Assistant-Chatbot",
+      "repo_url": "https://github.com/SohaibBazaz/RAG-Based-University-Assistant-Chatbot",
+      "description": "An AI-powered chatbot that answers student questions using university PDFs with the help of Google's Gemini API and RAG (Retrieval-Augmented Generation) architecture.",
+      "stars": 9,
+      "forks": 5,
+      "updated_at": "2026-05-14T10:02:36Z"
+    },
+    {
+      "repo_name": "llamaindexchat",
+      "repo_url": "https://github.com/dcarpintero/llamaindexchat",
+      "description": "LLM Chatbot w/ Retrieval Augmented Generation using Llamaindex. It demonstrates how to impl. chunking, indexing, and source citation.",
+      "stars": 45,
+      "forks": 5,
+      "updated_at": "2026-03-17T06:56:56Z"
+    }
+  ]
+}

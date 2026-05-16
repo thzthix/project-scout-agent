@@ -1,0 +1,76 @@
+{
+  "candidates": [
+    {
+      "repo_name": "xteammors-OpenClaw4J",
+      "repo_url": "https://github.com/teammors/xteammors-OpenClaw4J",
+      "description": "OpenClaw4J is a modern intelligent Agent framework built on Java 21 and Spring AI. Inspired by the OpenClaw project\uff0cOpenClaw4J \u662f\u4e00\u4e2a\u57fa\u4e8e Java 21 \u548c Spring AI \u6784\u5efa\u7684\u73b0\u4ee3\u667a\u80fd Agent \u6846\u67b6,\u53d7\u5230 OpenClaw \u9879\u76ee\uff08\u5f00\u6e90\u7cbe\u795e\u4e0e\u7ecf\u5178\u91cd\u6784\uff09\u7684\u542f\u53d1\uff0c\u672c\u9879\u76ee\u7684\u76ee\u6807\u662f\u4e3a Java \u5f00\u53d1\u8005\u63d0\u4f9b\u4e00\u4e2a\u7075\u6d3b\u3001\u53ef\u6269\u5c55\u4e14\u529f\u80fd\u5f3a\u5927\u7684 AI \u673a\u5668\u4eba/Agent \u5f00\u53d1\u5e95\u5ea7\u3002",
+      "stars": 12,
+      "forks": 7,
+      "updated_at": "2026-04-26T04:11:41Z"
+    },
+    {
+      "repo_name": "open-daimon",
+      "repo_url": "https://github.com/NGirchev/open-daimon",
+      "description": "Self-hosted Java/Spring Boot AI agent framework with FSM-based ReAct loop, extensible modules, Telegram assistant for personal/group chats, REST/Web UI, OpenRouter/Ollama, and Spring Boot starter.",
+      "stars": 5,
+      "forks": 0,
+      "updated_at": "2026-05-15T04:20:24Z"
+    },
+    {
+      "repo_name": "spring-aI-with-local-LLAMA3",
+      "repo_url": "https://github.com/gdorsi44/spring-aI-with-local-LLAMA3",
+      "description": "This demo demonstrates the integration of a local LLama3 model for handling JSON responses within the Spring AI framework, positioning the model as a 'business logic' executor",
+      "stars": 4,
+      "forks": 6,
+      "updated_at": "2025-09-29T19:58:52Z"
+    },
+    {
+      "repo_name": "AI-Fabric-Framework",
+      "repo_url": "https://github.com/mahmoudashraf/AI-Fabric-Framework",
+      "description": "AI Fabric adds semantic search, embeddings, RAG, and behavioral analytics to your Spring Boot app with one annotation.",
+      "stars": 2,
+      "forks": 0,
+      "updated_at": "2026-05-10T19:40:34Z"
+    },
+    {
+      "repo_name": "smart-debug-starter",
+      "repo_url": "https://github.com/Vivan-1045/smart-debug-starter",
+      "description": "A plug-and-play Spring Boot starter that enhances debugging by parsing stack traces, filtering framework noise, extracting root causes, and integrating RAG-based AI for actionable insights.",
+      "stars": 2,
+      "forks": 0,
+      "updated_at": "2026-05-08T05:27:20Z"
+    },
+    {
+      "repo_name": "Java_Spring_AI_Project",
+      "repo_url": "https://github.com/shafqatgreat/Java_Spring_AI_Project",
+      "description": "A professional-grade implementation of Retrieval-Augmented Generation (RAG) using the Spring AI framework. This project demonstrates how to integrate Large Language Models (LLMs) like Google Gemini with local vector storage to create context-aware AI applications.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-04-10T08:09:40Z"
+    },
+    {
+      "repo_name": "rag",
+      "repo_url": "https://github.com/lioneraV2002/rag",
+      "description": "A RAG-powered financial advisor agent developed with the Spring framework.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-09-12T14:23:54Z"
+    },
+    {
+      "repo_name": "java-ai-labs",
+      "repo_url": "https://github.com/django-hunter/java-ai-labs",
+      "description": "A hands-on learning repository for building AI-powered applications in Java.  Covers the two major frameworks in the Java AI ecosystem \u2014 LangChain4j and Spring AI \u2014 through progressively complex labs, from streaming output to full RAG pipelines.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-03-30T14:56:33Z"
+    },
+    {
+      "repo_name": "MedExtractRAGBased",
+      "repo_url": "https://github.com/NitishKumarSinha213/MedExtractRAGBased",
+      "description": "MedExtract AI is a high-precision medical data extraction framework built with Java 21, Spring Boot, and LangChain4j. It utilizes a \"Small-to-Big\" (Parent Document) Retrieval-Augmented Generation (RAG) pattern to ensure medical headers (like Patient Names) are never lost during semantic search, even when using local LLMs.",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-03-16T19:38:06Z"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+[
+  {
+    "brief_id": "python-agent-workflow",
+    "request": {
+      "project_name": "Project Scout Agent",
+      "project_goal": "I want to build an agent system that finds and evaluates GitHub repositories for my project.",
+      "target_repository_description": "python agent workflow reference repository",
+      "priorities": [
+        "docs_quality",
+        "activity"
+      ],
+      "custom_priorities": [],
+      "seed_keywords": [
+        "langchain",
+        "langgraph",
+        "tool calling"
+      ],
+      "constraints": {
+        "preferred_languages": [
+          "python"
+        ],
+        "license_types": [],
+        "must_have_docs": true
+      }
+    },
+    "relevant_repositories": [
+      {
+        "full_name": "langchain-ai/langgraph",
+        "notes": "Strong reference for graph-based agent workflow patterns."
+      },
+      {
+        "full_name": "langchain-ai/langchain",
+        "notes": "Useful baseline for tool calling and agent abstractions."
+      }
+    ]
+  },
+  {
+    "brief_id": "python-multi-agent-framework",
+    "request": {
+      "project_name": "Multi Agent Scout",
+      "project_goal": "I want to build a multi-agent orchestration system and need reference repositories for planning, coordination, and tool use.",
+      "target_repository_description": "python multi agent orchestration framework repository",
+      "priorities": [
+        "docs_quality",
+        "production_readiness"
+      ],
+      "custom_priorities": [],
+      "seed_keywords": [
+        "multi agent",
+        "orchestration",
+        "tool calling"
+      ],
+      "constraints": {
+        "preferred_languages": [
+          "python"
+        ],
+        "license_types": [],
+        "must_have_docs": true
+      }
+    },
+    "relevant_repositories": [
+      {
+        "full_name": "microsoft/autogen",
+        "notes": "Well-known multi-agent framework with coordination patterns and agent messaging."
+      },
+      {
+        "full_name": "langchain-ai/langgraph",
+        "notes": "Relevant for orchestration and stateful multi-agent workflow design."
+      }
+    ]
+  },
+  {
+    "brief_id": "python-rag-chatbot-framework",
+    "request": {
+      "project_name": "RAG Chatbot Scout",
+      "project_goal": "I want to build a retrieval-augmented chatbot and need strong reference repositories for indexing, retrieval, and orchestration.",
+      "target_repository_description": "python rag chatbot framework repository",
+      "priorities": [
+        "docs_quality",
+        "example_coverage"
+      ],
+      "custom_priorities": [],
+      "seed_keywords": [
+        "rag",
+        "chatbot",
+        "retrieval"
+      ],
+      "constraints": {
+        "preferred_languages": [
+          "python"
+        ],
+        "license_types": [],
+        "must_have_docs": true
+      }
+    },
+    "relevant_repositories": [
+      {
+        "full_name": "run-llama/llama_index",
+        "notes": "Strong reference for retrieval pipelines, indexing, and agentic RAG workflows."
+      },
+      {
+        "full_name": "deepset-ai/haystack",
+        "notes": "Established retrieval and QA framework with RAG-oriented examples."
+      }
+    ]
+  },
+  {
+    "brief_id": "python-structured-agent-framework",
+    "request": {
+      "project_name": "Structured Agent Scout",
+      "project_goal": "I want to build a production-friendly Python agent system with strong typing and structured outputs.",
+      "target_repository_description": "python structured agent framework repository",
+      "priorities": [
+        "production_readiness",
+        "docs_quality"
+      ],
+      "custom_priorities": [],
+      "seed_keywords": [
+        "agent framework",
+        "structured output",
+        "pydantic"
+      ],
+      "constraints": {
+        "preferred_languages": [
+          "python"
+        ],
+        "license_types": [],
+        "must_have_docs": true
+      }
+    },
+    "relevant_repositories": [
+      {
+        "full_name": "pydantic/pydantic-ai",
+        "notes": "Strong reference for typed agent workflows and structured output patterns."
+      },
+      {
+        "full_name": "langchain-ai/langgraph",
+        "notes": "Useful comparison point for stateful agent orchestration in Python."
+      }
+    ]
+  },
+  {
+    "brief_id": "java-spring-ai-framework",
+    "request": {
+      "project_name": "Spring AI Scout",
+      "project_goal": "I want to explore Java and Spring-based AI application frameworks for enterprise-style integrations.",
+      "target_repository_description": "java spring ai framework repository",
+      "priorities": [
+        "production_readiness",
+        "docs_quality"
+      ],
+      "custom_priorities": [],
+      "seed_keywords": [
+        "spring ai",
+        "java ai framework",
+        "rag"
+      ],
+      "constraints": {
+        "preferred_languages": [
+          "java"
+        ],
+        "license_types": [],
+        "must_have_docs": true
+      }
+    },
+    "relevant_repositories": [
+      {
+        "full_name": "spring-projects/spring-ai",
+        "notes": "Primary Spring ecosystem framework for building AI applications in Java."
+      }
+    ]
+  }
+]
